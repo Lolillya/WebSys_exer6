@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="jquery.dataTables.min.css" />
+
+    <script src="javascript.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.dataTables.min.js"></script>
+
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div class="stockIn_div">
+        <td>
+            <tr>
+                <h4 style="left: 15px; position: relative;">Stock In</h4>
+
+                <input class="prodId_input" type="text" id="productID" required>
+                <label class="prodID_label" for="productID"><br />Product ID</label>
+
+                <input class="prodCategory_input" type="text" id="prodCat" required>
+                <label class="prodCategory_label" for="prodCat"><br />Product Category</label>
+
+                <input class="prodName_input" type="text" id="prodName" required>
+                <label class="prodName_label" for="prodName"><br />Product Name</label>
+
+                <input class="prodQty_input" type="number" id="prodQty" required>
+                <label class="prodQty_label" for="prodQty"><br />Quantity</label>
+
+                <div class="uploadIMG">Choose File</div>
+                <label class="uploadIMG_label">No File Chosen</label>
+            </tr>
+        </td>
+        <div class="submitSock">Submit</div>
+    </div>
+
+    <div class="stockIn_list">
+        <table class="stockIn_table" id="StockIn_ID">
+            <thead>
+                <tr style="font-size: 15px;">
+                    <th style="width: 90px;">Product ID</th>
+                    <th style="width: 90px;">Product Category</th>
+                    <th style="width: 90px;">Product Name</th>
+                    <th style="width: 90px;">Picture</th>
+                    <th style="width: 90px;">Price</th>
+                    <th style="width: 90px;">Quantity</th>
+                    <th style="width: 90px;">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            readStockIn();
+        });
+    </script>
+
+</body>
+
+</html>

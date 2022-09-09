@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet.css" />
+    <link rel="stylesheet" href="jquery.dataTables.min.css"/>
+
+    <script src="javascript.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+    <div class="orderList">
+        <table class="orderTable" id="orderID">
+            <thead>
+                <tr class="orderCategory_tr" style="font-size: 15px">
+                    <th class="orderCategory">Customer ID</th>
+                    <th class="orderCategory">Product ID</th>
+                    <th class="orderCategory">Product Category</th>
+                    <th class="orderCategory">Product Name</th>
+                    <th class="orderCategory">Product Price</th>
+                    <th class="orderCategory">Quantity</th>
+                    <th class="orderCategory">Date Ordered</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            loadOrders()
+        });
+    </script>
+</body>
+
+</html>
