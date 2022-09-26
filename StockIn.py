@@ -1,22 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+from xml.dom.minidom import parse
+import xml.dom.minidom
 
+DOMTree = xml.dom.minidom.parse("products.xml")
+collection = DOMTree.documentElement
+print("Content-Type: text/html\n")
+
+
+link_Head = """
+<!DOCTYPE html>
+<html>
 <head>
-    <title></title>
-    <link rel="stylesheet" href="StyleSheet.css" />
     <link rel="stylesheet" href="jquery.dataTables.min.css" />
+    <link type="text/css" rel="stylesheet" href="/StyleSheet.css" />
 
     <script src="javascript.js"></script>
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="jquery.dataTables.min.js"></script>
-
-    <script>
-
-    </script>
 </head>
-
-<body>
-    <div class="stockIn_div">
+"""
+print(link_Head)
+print("<body>")
+stock_In = """<div class="stockIn_div">
         <td>
             <tr>
                 <h4 style="left: 15px; position: relative;">Stock In</h4>
@@ -38,8 +42,9 @@
             </tr>
         </td>
         <div class="submitSock">Submit</div>
-    </div>
-
+    </div>"""
+print(stock_In)
+body_table = """
     <div class="stockIn_list">
         <table class="stockIn_table" id="StockIn_ID">
             <thead>
@@ -54,17 +59,36 @@
                 </tr>
             </thead>
             <tbody>
+"""
+print(body_table)
+
+products = collection.getElementsByTagName("customers")
+for product in products:
+    print("<tr class=\"list_tr\">")
+    cid = product.getElementsByTagName('cid')[0]
+    print("<td class=\"catalog_info\">" + cid.childNodes[0].data + "</td>")
+    pcat = product.getElementsByTagName('pcat')[0]
+    print("<td class=\"catalog_info\">" + pcat.childNodes[0].data + "</td>")
+    pname = product.getElementsByTagName('pname')[0]
+    print("<td class=\"catalog_info\">" + pname.childNodes[0].data + "</td>")
+    pic = product.getElementsByTagName('picture')[0]
+    print("<td class=\"catalog_info\"><img src=\"pics/" + pic.childNodes[0].data + "\"width='60px'\"></td>")
+    price = product.getElementsByTagName('price')[0]
+    print("<td class=\"catalog_info\">" + price.childNodes[0].data + "</td>")
+    quantity = product.getElementsByTagName('quantity')[0]
+    print("<td class=\"catalog_info\">" + quantity.childNodes[0].data + "</td>")
+    date = product.getElementsByTagName('date')[0]
+    print("<td class=\"catalog_info\">" + date.childNodes[0].data + "</td>")
+    print("</tr>")
+test = """
             </tbody>
         </table>
     </div>
 
-
     <script>
-        $(document).ready(function () {
-            readStockIn();
-        });
+        $('#StockIn_ID').DataTable();
     </script>
-
 </body>
-
 </html>
+"""
+print(test)

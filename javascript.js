@@ -334,7 +334,7 @@ function readStockIn() {
           body += "<td class=\"catalog_info\">" + $(this).find('cid').text() + "</td>";
           body += "<td class=\"catalog_info\">" + $(this).find('pcat').text() + "</td>";
           body += "<td class=\"catalog_info\">" + $(this).find('pname').text() + "</td>";
-          body += "<td class=\"catalog_info\"><img src=\"pics/" + $(this).find('picture').text() + "\"width='60px'/</td>";
+          body += "<td class=\"catalog_info\"><img src=\"pics/" + $(this).find('picture').text() + "\"width='60px'\"></td>";
           body += "<td class=\"catalog_info\">" + $(this).find('price').text() + "</td>";
           body += "<td class=\"catalog_info\">" + $(this).find('quantity').text() + "</td>";
           body += "<td class=\"catalog_info\">" + $(this).find('date').text() + "</td>";
